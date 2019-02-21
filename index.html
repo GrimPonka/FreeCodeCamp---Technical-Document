@@ -1,0 +1,156 @@
+<!DOCTYPE hmtl>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main id="main-doc">
+      <section id="Introduction" class="main-section">
+        <header>
+          <h1>Introduction</h1>
+        </header>
+        <p><b>C++</b> (pronounced see plus plus) is a general purpose programming language that is free-form and compiled. It is regarded as an intermediate-level language, as it comprises both high-level and low-level language features. It provides imperative, object-oriented and generic programming features.</p>
+        <p>C++ is one of the most popular programming languages and is implemented on a wide variety of hardware and operating system platforms. As an efficient performance driven programming language it is used in systems software, application software, device drivers, embedded software, high-performance server and client applications, and entertainment software such as video games. Various entities provide both open source and proprietary C++ compiler software, including the FSF, LLVM, Microsoft and Intel.</p>
+      </section>
+      <section id="Hello_World" class="main-section">
+        <header>
+          <h1>Hello World</h1>
+        </header>
+        <p>Every C++ program uses libraries, which give the ability to execute necessary functions. For example, the most basic function called 'cout', which prints to the screen, is defined in the <code>iostream</code> header file. </p>
+        <p>To add the ability to run the <code>cout</code> command to our program, we must add following include directive to our first line of the code:</p>
+        <div class="code">
+          <code>
+           #include &ltiostream&gt <br/>
+           using namespace std;
+          </code>
+        </div>
+        <p>The second part of the code is the actual code which we are going to write. The first code which will run will always reside in the <code>main</code> function. </p>
+        <div class="code">
+          <code>
+            int main() { <br/>
+            &nbsp&nbsp...our code goes here<br/>
+            }
+          </code>
+        </div>
+        <p>The <code>int</code> keyword indicates that the function <code>main</code> will return an integer - a simple number. The number which will be returned by the function indicates whether the program that we wrote worked correctly. If we want to say that our code was run successfully, we will return the number 0. A number greater than 0 will mean that the program that we wrote failed.</p>
+        <p>For this tutorial, we will return 0 to indicate that our program was successful:</p>
+        <div class="code">
+          <code>
+           int main() { <br/>
+           &nbsp&nbsp...our code goes here<br/>
+           &nbsp&nbspreturn 0; <br/>
+            }
+         </code>
+        </div>
+        <p>Last but not least, we will need to use redirection to the <code>cout</code> stream to print our sentence.</p>
+        <div class="code">
+          <code>
+            #include &ltiostream&gt <br/>
+           using namespace std; <br/><br/>
+           int main() { <br/>
+           &nbsp&nbspcout &lt&lt "Hello World" &lt&lt std::endl; <br/>
+            &nbsp&nbspreturn 0; <br/>
+            }
+         </code>
+        </div>
+      </section>
+      <section id="Variables_and_Types" class="main-section">
+        <header>
+          <h1>Variables and Types</h1>
+        </header>
+        <p>C++ provides a rich set of built-in as well as user defined data types. Following table lists down seven basic C++ data types:</p>
+        <ul>
+          <li>Boolean (<code>boolean</code>): Either <code>true</code> or <code>false</code></li>
+          <li>Integers (<code>int</code>, <code>char</code>): Whole numbers which can be either positive or negative.</li>
+          <li>Floating Point Numbers (<code>float</code>, <code>double</code>): Real numbers (numbers with decimal points).</li>
+          <li>Valueless (<code>void</code>): Data without value. </li>
+          <li>Wide Character (<code>wchar_t</code>): Has 2 to 4 bytes of space available.</li>
+        </ul>
+        <p>To define a variable one needs to write the data type, followed by the variable name and then the value that the variable is storing (this is optional).</p>
+        <div class="code">
+          <code>
+           int foo;
+            int bar = 1;
+          </code>
+        </div>
+        <p>The variable <code>foo</code> can be used, but since we did not initialize it, we don't know what's in it. The variable <code>bar</code> contains the number 1.</p>
+      </section>
+      <section id="Arrays" class="main-section">
+        <header>
+          <h1>Arrays</h1>
+        </header>
+        <p>Each of the variables in an array is called an element. Elements do not have their own unique names. Instead, to access individual elements of an array, we use the array name, along with the subscript operator ([]), and a parameter called a subscript (or index) that tells the compiler which element we want. This process is called subscripting or indexing the array.</p>
+        <p>Creation of arrays are similar to that of variables but with the addition of the declaration of the array size withing the subscript operator([]).</p>
+        <div class="code">
+          <code>
+            int foo[3] = {1, 2, 3};
+          </code>
+        </div>
+        <p>Arrays elements can be accessed after declaration by calling upon the array name followed by the elements position in the list.</p>
+        <div class="code">
+          <code>
+           cout &lt&lt "Result:" &lt&lt foo[1]; //Result: 2
+          </code>
+        </div>
+        <p>In the example the second element of the array <code>foo</code> is returned (counting starts from 0, making the first element in the array foo[0]).</p>
+      </section>
+      <section id="Loops" class="main-section">
+        <header>
+          <h1>Loops</h1>
+        </header>
+        <p>The <b>while statement</b> is the simplest of the loops that C++ provides.</p>
+        <p>A while statement is declared using the while keyword. When a while statement is executed, the expression is evaluated. If the expression evaluates to true (non-zero), the statement executes.</p>
+        <div class="code">
+          <code>
+            while(condition) { <br/>
+            &nbsp&nbsp...some statement <br/>
+            }
+         </code>
+        </div>
+        <p>While loops will loop infinitely unless the condition becomes false somepoint during the loop</p>
+        <p>By far, the most utilized looping statement in C++ is the for statement. The for statement (also called a for loop) is ideal when we know exactly how many times we need to iterate, because it lets us easily define, initialize, and change the value of loop variables after each iteration.</p>
+        <p>The <b>for statement</b> looks pretty simple in abstract:</p>
+        <div class="code">
+          <code>
+           for (init-statement; condition-expression; end-expression) { <br/>
+    &nbsp&nbsp...statement goes here <br/>
+           }
+          </code>
+        </div>
+        <p>A <code>for</code> loop is evaluated in 3 parts:</p>
+        <ol>
+          <li>The init-statement is evaluated. Typically, the init-statement consists of variable definitions and initialization. This statement is only evaluated once, when the loop is first executed.</li>
+          <li>The condition-expression is evaluated. If this evaluates to false, the loop terminates immediately. If this evaluates to true, the statement is executed.</li>
+          <li>After the statement is executed, the end-expression is evaluated. Typically, this expression is used to increment or decrement the variables declared in the init-statement. After the end-expression has been evaluated, the loop returns to step 2.</li>
+        </ol>
+        <div class="code">
+          <code>
+            for (int count=0; count &lt 10; ++count) { <br/>
+           &nbsp&nbsp...some statement is executed <br/>
+           }
+          </code>
+        </div>
+        <p>It is possible to have a for loop continue on forever, much like while loops, if one does not specify an ending condition or include an end expression.</p> 
+      </section>
+      <section id="References" class="main-section">
+        <header>
+          <h1>References</h1>
+        </header>
+        <p>All the documentation on this page was taken from <a href="https://www.learn-cpp.org/" target="_blank">learn-cpp.org</a> and <a href="https://www.learncpp.com/" target="_blank">learncpp.com</a></p>
+      </section>
+    </main>
+    <nav id="navbar">
+      <header>
+        <h2>C++ Documentation</h2>
+      </header>
+      <a class="nav-link" href="#Introduction"><p>Introduction</p></a>
+      <a class="nav-link" href="#Hello_World"><p>Hello World</p></a>
+      <a class="nav-link" href="#Variables_and_Types"><p>Variables and Types</p></a>
+      <a class="nav-link" href="#Arrays"><p>Arrays</p></a>
+      <a class="nav-link" href="#Loops"><p>Loops</p></a>
+      <a class="nav-link" href="#References"><p>References</p></a>
+    </nav>
+  </body>
+</html>
